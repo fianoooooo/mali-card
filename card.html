@@ -125,7 +125,7 @@
             border: 1px solid #ddd;
         }
         
-        /* 区块链信息弹窗 */
+        /* 区块链信息弹窗（保留样式但暂不显示） */
         .modal {
             display: none;
             position: fixed;
@@ -270,7 +270,7 @@
         </div>
     </div>
     
-    <!-- 区块链信息弹窗 -->
+    <!-- 区块链信息弹窗（保留结构但暂不显示） -->
     <div class="modal" id="blockchainModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -350,13 +350,12 @@
             document.getElementById('txHash').textContent = '0x' + Math.random().toString(16).substr(2, 64);
         }
         
-        // 显示区块链信息
+        // 查看区块链凭证 - 直接跳转到海卡验证页（固定链接）
         function showBlockchain() {
-            document.getElementById('blockchainModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            window.open('https://nfc.haikaflow.com/#/pages/verfiy/assets?platform=GGSK&issuer=SHHSX&assetsId=g1097', '_blank');
         }
         
-        // 关闭弹窗
+        // 关闭弹窗（保留函数但暂不主动调用）
         function closeModal(event) {
             if (!event || event.target.id === 'blockchainModal') {
                 document.getElementById('blockchainModal').style.display = 'none';
